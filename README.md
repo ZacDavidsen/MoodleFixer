@@ -3,6 +3,18 @@ A Chrome extension that allows filtering the navigation tab in Moodle
 
 The reason this exists is because I got tired of scrolling down a long list of old courses trying to find the ones I needed.  This solves that problem by allowing the user to filter which classes show up in the navigation tab, filtered by the term code (e.g. 1516F).  It autodetects new term codes/names when moodle is loaded, and adds them to the list of codes that it filters.  The extension also comes with a "browser action" button that appears next to the search bar, and allows the user to edit which terms are shown.  Additionally, the extension will never affect any other pages, and the action button is only enabled on the moodle.rose-hulman.edu domain.
 
+The navigation tab that I had to spend way too long searching vs. the filtered version:
+
+![alt text](https://github.com/ZacDavidsen/MoodleFixer/blob/master/exampleImages/oldNavBar.PNG) ![alt text](https://github.com/ZacDavidsen/MoodleFixer/blob/master/exampleImages/filteredNavBar.PNG)
+
+The browser action button (note that this will be grayed out when not on Moodle):
+
+![alt text](https://github.com/ZacDavidsen/MoodleFixer/blob/master/exampleImages/actionButton.PNG)
+
+The filter UI (drops down frome the action button):
+
+![alt text](https://github.com/ZacDavidsen/MoodleFixer/blob/master/exampleImages/filterInterface.PNG)
+
 The repository will always have an up to date version of the compiled/packaged extension in the main directory.
 
 ### To install:
