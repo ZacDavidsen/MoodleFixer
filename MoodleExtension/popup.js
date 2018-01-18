@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	chrome.storage.sync.get("moodleQuarters", function(items){
 		moodleQuarters = items.moodleQuarters;
 		let list = document.getElementById("quarterList")
-		
+		//console.log(moodleQuarters);
 		if(moodleQuarters == null){
 			let div = document.createElement("div");
 			let textNode = document.createTextNode("No quarters found, open Moodle to auto detect quarters and add them to this list!");
