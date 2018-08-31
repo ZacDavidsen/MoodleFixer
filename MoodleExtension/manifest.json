@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Moodle fixer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   
   "description": "Provides an interface to filter the navigation tab in Moodle.  Source and updates (maybe) available at https://github.com/ZacDavidsen/MoodleFixer",
   

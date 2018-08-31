@@ -1,7 +1,12 @@
 
-let courses = document.getElementsByClassName("type_course depth_3");
+var getCourseElements = function(){
+	document.querySelectorAll("a[data-parent-key='mycourses']");
+}
+
+//looks like this won't sync unless the extension actually gets published
 chrome.storage.sync.get("moodleQuarters", function(items){
-	
+	let courses = document.querySelectorAll("a[data-parent-key='mycourses']");
+
 	let moodleQuarters = items.moodleQuarters;
 	
 	if(moodleQuarters == null){
@@ -9,10 +14,10 @@ chrome.storage.sync.get("moodleQuarters", function(items){
 	}
 
 	for(let i = 0; i < courses.length; i++){
-		let quarterName = courses[i].innerText.substring(0,5);
+		let quarterName = courses[i].innerText.trim().substring(0,5);
 		
 		if(isNaN(quarterName.substring(0, 4))){
-			quarterName = courses[i].innerText.split("\n")[0];
+			quarterName = courses[i].innerText.trim().split("\n")[0];
 		}
 		
 		let containsQuarter = false;
@@ -78,13 +83,14 @@ chrome.storage.sync.get("moodleQuarters", function(items){
 	chrome.runtime.onMessage.addListener(function(request, sender){
 		//console.log(request);
 		let moodleQuarters = request;
-		let courses = document.getElementsByClassName("type_course depth_3");
+
+		let courses = document.querySelectorAll("a[data-parent-key='mycourses']");
 		//console.log(courses);
 		for(let i = 0; i < courses.length; i++){
-			let quarterName = courses[i].innerText.substring(0,5);
+			let quarterName = courses[i].innerText.trim().substring(0,5);
 		
 			if(isNaN(quarterName.substring(0, 4))){
-				quarterName = courses[i].innerText.split("\n")[0];
+				quarterName = courses[i].innerText.trim().split("\n")[0];
 			}
 			
 			let containsQuarter = false;
@@ -101,7 +107,7 @@ chrome.storage.sync.get("moodleQuarters", function(items){
 					courses[i].style.display = "none";
 				}
 				else{
-					courses[i].style.display = "";
+					courses[i].style.display = "block";
 				}
 			}
 		}
